@@ -1,0 +1,42 @@
+background yes
+use_xft yes
+xftfont dejavu sans mono:size=7
+xftalpha 1
+update_interval 0.5
+update_interval_on_battery 1
+total_run_times 0
+own_window yes
+own_window_transparent no
+own_window_type panel
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_colour 333333
+double_buffer yes
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+alignment tl
+maximum_width 2550 1
+minimum_size 2560 13
+gap_x 5
+gap_y 5
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+default_color 8A8A8A
+color0 B7B7B7
+color1 black
+color2 red
+color3 orange3
+
+# core
+#display :0.0
+format_human_readable yes
+short_units yes
+
+TEXT
+${color grey}${time %a %d %b %H:%M} \
+| ${color grey}CPU:$color $freq | ${color grey}CPU Usage:$color $cpu% \
+| ${color grey}RAM:$color $mem/$memmax | ${color grey}Bat: ${apm_battery_life}${color} \
+${color1}|${color} | ${color grey}Net: ${color0}${upspeedf iwm0}k ${downspeedf iwm0}k${color} ${color1}|${color} \
+${alignr 1}${color3}${exec hostname -s} ~ ${exec whoami}
