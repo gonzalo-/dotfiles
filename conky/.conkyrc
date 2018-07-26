@@ -1,6 +1,6 @@
 background yes
 use_xft yes
-xftfont dejavu sans mono:size=7
+xftfont dejavu sans mono:size=8
 xftalpha 1
 update_interval 0.5
 update_interval_on_battery 1
@@ -16,8 +16,8 @@ draw_outline no
 draw_borders no
 draw_graph_borders no
 alignment tl
-maximum_width 2550 1
-minimum_size 2560 13
+maximum_width 1358 1
+minimum_size 1358 13
 gap_x 5
 gap_y 5
 no_buffers yes
@@ -35,8 +35,10 @@ format_human_readable yes
 short_units yes
 
 TEXT
-${color grey}${time %a %d %b %H:%M} \
-| ${color grey}CPU:$color $freq | ${color grey}CPU Usage:$color $cpu% \
-| ${color grey}RAM:$color $mem/$memmax | ${color grey}Bat: ${apm_battery_life}${color} \
-${color1}|${color} | ${color grey}Net: ${color0}${upspeedf iwm0}k ${downspeedf iwm0}k${color} ${color1}|${color} \
+${color grey}${time %a %d %b %H:%M:%S} \
+| ${color grey}CPU:$color ${cpu cpu0}% ${cpu cpu1}% ${cpu cpu2}% ${cpu cpu3}% \
+| ${color grey}RAM:$color $mem/$memmax | ${color grey}Bat: ${apm_battery_life} \
+| ${color grey}Net:$color ${upspeedf em0}k ${downspeedf em0}k | \
+${color grey}Wifi:$color ${upspeedf iwn0}k ${downspeedf iwn0}k nwid: ${exec ifconfig | grep nwid | awk {'print $3'} | \
+${color grey}Public IP:$color ${exec curl -s https://x61.sh/ip/} \
 ${alignr 1}${color3}${exec hostname -s} ~ ${exec whoami}
