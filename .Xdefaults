@@ -1,122 +1,65 @@
-!!! Colores
+!!! Colours
+XTerm*color0: #000000
+XTerm*color1: #ff6c60
+XTerm*color2: #a8ff60
+XTerm*color3: #ffffb6
+XTerm*color4: #96cbfe
+XTerm*color5: #ff73fd
+XTerm*color6: #c6c5fe
+XTerm*color7: #eeeeee
+XTerm*color8: #7c7c7c
+XTerm*color9: #ffb6b0
+XTerm*color10: #ceffab
+XTerm*color11: #ffffcb
+XTerm*color12: #b6dcfe
+XTerm*color13: #ff9cfe
+XTerm*color14: #dfdffe
+XTerm*color15: #ffffff
 
-*background:					#262626
-*foreground:					#f1f1f1
-
-! black
-*color0:						#000000
-
-! bright_black
-*color8:						#262626
-
-! red
-*color1:						#83586e
-
-! bright_red
-*color9:						#b590a2
-
-! green
-*color2:						#6e8358
-
-! bright_green
-*color10:						#a2b590
-
-! yellow
-*color3:						#836e58
-
-! bright_yellow
-*color11:						#b5a290
-
-! blue
-*color4:						#586e83
-
-! bright_blue
-*color12:						#90a2b5
-
-! magenta
-*color5:						#6e5883
-
-! bright_magenta
-*color13:						#a290b5
-
-! cyan
-*color6:						#58836e
-
-! bright_cyan
-*color14:						#90b5a2
-
-! white
-*color7:						#a0a0a0
-
-! bright_white
-*color15:						#f1f1f1
-
-!!! Font
-*.font:							-*-lucida-medium-r-*-*-9-*-*-*-*-*-*-*
-
-!!! xterm-specific settings
-xterm*ScrollBar:				false
-*.saveLines:					9000
-
-XTerm*locale:					true
-*locale:						UTF-8
-
-XTerm*loginShell:				true
-
-!!xterm*background:				#494949
-xterm*background:				#000000
-xterm*foreground:				#e3e0d5
-xterm*cursorColor:				#c2c2b0
-
-*.XTerm.*.faceName:				dejavu sans mono:size=8
-*.XTerm.*.scaleHeight:			1.01
-*.XTerm.*.internalBorder:		6
-
-*.XTerm.*.selectToClipboard:	true
-*.XTerm.*.utmpInhibit:			true
-
-! hide when i type
-*.XTerm.*.pointerMode:			2
-
-*.XTerm.*.allowTitleOps:		true
-
-*.XTerm.*.title:				xterm
-*.XTerm.*.termName:				xterm-256color
-
-*.XTerm.*.visualBell:			false
+!!! Xterm
+XTerm*background: #141414
+XTerm*foreground: #eeeeee
+XTerm*eightBitInput: false
+XTerm*loginShell: true
+XTerm*scrollBar: false
+XTerm*saveLines: 1500
+XTerm*faceName:	xft:monospace:pixelsize=12
+XTerm*internalBorder: 10
+XTerm*locale: true
+XTerm*pointerMode: 2
+XTerm*allowTitleOps: true
 
 !!! xLock
-XIdle.timeout:					300
-XLock.grabmouse:				on
-XLock.mode:						random
-XLock.mousemotion:				on
-XLock.usefirst:					yes
-XLock.lockdelay:				10
-XLock.nice:						19
-
-! make alt+v/command+v paste clipboard
-*.XTerm.*.VT100.translations:	#override\
-    Meta <KeyPress> V:			insert-selection(CLIPBOARD, PRIMARY, CUT_BUFFER0)\n\
-    Super <KeyPress> V:			insert-selection(CLIPBOARD, PRIMARY, CUT_BUFFER0)
-
-! make xaw scrollbars act like normal ones
-.XTerm.*.Scrollbar.translations: #override\
-    <Btn1Down>: 				StartScroll(Continuous) MoveThumb() NotifyThumb() \n\
-    <Btn2Down>:					StartScroll(Forward) \n\
-    <Btn3Down>:					StartScroll(Backward) \n\
-    <Btn1Motion>: 				MoveThumb() NotifyThumb() \n\
-    <BtnUp>: 					NotifyScroll(Proportional) EndScroll()
-
+XLock.nice: 19
+XLock.mode: blank
+XIdle.timeout: 300
+XLock.usefirst: yes
+XLock.grabmouse: on
+XLock.lockdelay: 10
+XLock.mousemotion: on
 
 !!! ssh-askpass
-ssh-askpass*font:					-*-lucida-medium-r-*-*-12-*-*-*-*-*-*-*
-ssh-askpass*foreground:				#f1f1f1
-ssh-askpass*background:				#262626
-ssh-askpass.*.borderWidth:			1
-ssh-askpass.*.borderColor:			black
-ssh-askpass.*.shadowThickness:		0
-ssh-askpass.*Button.borderWidth:	0
-ssh-askpass.*Button.background:		#a0a0a0
-ssh-askpass.indicator.borderWidth:	0
-ssh-askpass.indicator.background:	#a0a0a0
-ssh-askpass.indicator.foreground:	#a290b5
+ssh-askpass*font: dejavu sans mono:size=12
+ssh-askpass*foreground: #f1f1f1
+ssh-askpass*background: #262626
+ssh-askpass.*.borderWidth: 1
+ssh-askpass.*.borderColor: black
+ssh-askpass.*.shadowThickness: 0
+ssh-askpass.*Button.borderWidth: 0
+ssh-askpass.*Button.background: #a0a0a0
+ssh-askpass.indicator.borderWidth: 0
+ssh-askpass.indicator.background: #a0a0a0
+ssh-askpass.indicator.foreground: #a290b5
+
+!!! make alt+v/command+v paste clipboard
+*.XTerm.*.VT100.translations:	#override\
+    Meta <KeyPress> V: insert-selection(CLIPBOARD, PRIMARY, CUT_BUFFER0)\n\
+    Super <KeyPress> V: insert-selection(CLIPBOARD, PRIMARY, CUT_BUFFER0)
+
+!!! make xaw scrollbars act like normal ones
+.XTerm.*.Scrollbar.translations:                             #override\
+    <Btn1Down>: StartScroll(Continuous) MoveThumb() NotifyThumb() \n\
+    <Btn2Down>: StartScroll(Forward) \n\
+    <Btn3Down>: StartScroll(Backward) \n\
+    <Btn1Motion>: MoveThumb() NotifyThumb() \n\
+    <BtnUp>: NotifyScroll(Proportional) EndScroll()
