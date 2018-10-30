@@ -1,11 +1,14 @@
 #!/bin/sh
 
 export LANG=en_US.UTF-8
-xrandr --dpi 160
+export GDK_DPI_SCALE=1.5
+export MOZ_ACCELERATED=1
+
+xrandr --dpi 96
 xrdb < ~/.Xdefaults
 
-if [ -z "$SSH_AUTH_SOCK" ] ; then
-    eval `/usr/bin/ssh-agent`
+if [ -x /usr/local/bin/dbus-launch -a -z "${DBUS_SESSION_BUS_ADDRESS}" ]; then
+	eval `dbus-launch --sh-syntax --exit-with-x11`
 fi
 
 for m in `ls /usr/local/share/fonts/`; do
@@ -14,12 +17,15 @@ for m in `ls /usr/local/share/fonts/`; do
 	fi
 done
 
+eval `ssh-agent -s`
+
 xset -b
-~/code/lock &
-~/code/sctd &
+
+$HOME/code/lock &
+$HOME/code/sctd &
 
 conky &
 
-feh --bg-scale ~/themes/OpenBSD-Carbon-Fiber.png &
+feh --bg-scale $HOME/themes/wallpaper-1615904.jpg &
 
 cwm
