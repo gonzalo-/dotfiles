@@ -1,0 +1,22 @@
+xlogin.Login.echoPasswd:		true
+xlogin.Login.fail:			fail
+xlogin.Login.failColor:			red
+xlogin.Login.greeting:
+xlogin.Login.namePrompt:		login: 
+xlogin.Login.passwdPrompt:		passwd: 
+
+xlogin.Login.frameWidth:		0
+xlogin.Login.innerFramesWidth:		0
+
+xlogin.Login.background:		black
+xlogin.Login.foreground:		#cccccc
+xlogin.Login.failColor:			white
+xlogin.Login.inpColor:			black
+xlogin.Login.promptColor:		#888888
+
+xlogin.Login.face:			dejavu sans mono:size=12
+xlogin.Login.failFace:			dejavu sans mono:size=12
+xlogin.Login.promptFace:		dejavu sans mono:size=12
+
+xlogin.Login.allowRootLogin:		false
+
