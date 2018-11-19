@@ -16,8 +16,8 @@ draw_outline no
 draw_borders no
 draw_graph_borders no
 alignment tl
-maximum_width 2551 1
-minimum_size 2551 13
+maximum_width 2150 1
+minimum_size 2150 13
 gap_x 5
 gap_y 5
 no_buffers yes
@@ -36,9 +36,10 @@ short_units yes
 
 TEXT
 ${color grey}${time %a %d %b %H:%M:%S} \
-| ${color grey}CPU:$color ${cpu cpu0}% ${cpu cpu1}% ${cpu cpu2}% ${cpu cpu3}% \
-| ${color grey}RAM:$color $mem/$memmax | ${color grey}Bat: ${apm_battery_life} \
-| ${color grey}Net:$color ${upspeedf em0}k ${downspeedf em0}k | \
-${color grey}Wifi:$color ${upspeedf iwm0}k ${downspeedf iwm0}k nwid: ${exec ifconfig | grep nwid | awk {'print $3'}} | \
-${color grey}Public IP:$color ${execi 500 curl -s https://ip.x61.sh } \
+${color3}| ${color grey}CPU:$color ${cpu cpu0}% ${cpu cpu1}% ${cpu cpu2}% ${cpu cpu3}% \
+${color3}| ${color grey}RAM:$color $mem/$memmax \
+${color3}| ${color grey}Bat:$color ${apm_battery_life} \
+${color3}| ${color grey}Net:$color ${upspeedf axen0}k ${downspeedf axen0}k \
+${color3}| ${color grey}Wifi:$color ${upspeedf iwm0}k ${downspeedf iwm0}k ${color grey}nwid:$color ${exec ifconfig | grep join | awk {'print $3'}} \
+${color3}| ${color grey}Public IP:$color ${execi 500 curl -s https://ip.x61.sh } \
 ${alignr 1}${color3}${execi 3000 hostname -s} ~ ${execi 3000 whoami}
