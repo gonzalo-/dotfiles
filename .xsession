@@ -1,31 +1,34 @@
 #!/bin/sh
 
-export LANG=en_US.UTF-8
-export GDK_DPI_SCALE=1.5
-export MOZ_ACCELERATED=1
+## SETUP for Matebook
 
-xrandr --dpi 96
+setxkbmap de
+
+export LANG=en_US.UTF-8
+export MOZ_USE_XINPUT2=1
+export HIDPI=1
+export GDK_SCALE=1.8
+export QT_SCALE_FACTOR=1.8
+
+#xrandr --dpi 120
 xrdb < ~/.Xdefaults
 
-if [ -x /usr/local/bin/dbus-launch -a -z "${DBUS_SESSION_BUS_ADDRESS}" ]; then
-	eval `dbus-launch --sh-syntax --exit-with-x11`
-fi
+eval `dbus-launch --sh-syntax`
 
-for m in `ls /usr/local/share/fonts/`; do
-	if [ -d "/usr/local/share/fonts/$m" ]; then
-		xset fp+ "/usr/local/share/fonts/$m"
-	fi
-done
+xset b 0 0 0
+xset r rate 350 35
+xset m 3/1 4
+
+# ~/bin/lock does some protections and runs slock
+xidle -timeout 300 -ne -program ~/code/lock &
+
+~/code/sctd &
 
 eval `ssh-agent -s`
 
-xset -b
-
-$HOME/code/lock &
-$HOME/code/sctd &
-
 conky &
 
-feh --bg-scale $HOME/themes/wallpaper-1615904.jpg &
+feh --bg-tile ~/themes/tiling-nice3.png &
+#feh --bg-scale ~/themes/OpenBSD-Carbon-Fiber.png &
 
-cwm
+exec cwm
