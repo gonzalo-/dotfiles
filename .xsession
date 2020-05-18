@@ -1,34 +1,42 @@
 #!/bin/sh
 
-## SETUP for Matebook
+## set keyboard map
+setxkbmap jp
 
-setxkbmap de
-
+## utf-8 love
 export LANG=en_US.UTF-8
-export MOZ_USE_XINPUT2=1
-export HIDPI=1
-export GDK_SCALE=1.8
-export QT_SCALE_FACTOR=1.8
+export LC_CTYPE=en_US.UTF-8
 
-#xrandr --dpi 120
+## bits for JP websites
+export XMODIFIERS=@im=uim
+export GTK_IM_MODULE="uim"
+
+## load the colours
 xrdb < ~/.Xdefaults
 
-eval `dbus-launch --sh-syntax`
-
-xset b 0 0 0
-xset r rate 350 35
-xset m 3/1 4
-
-# ~/bin/lock does some protections and runs slock
+## ~/bin/lock does run xlock
 xidle -timeout 300 -ne -program ~/code/lock &
 
+## lets get red
 ~/code/sctd &
 
+## just-in-case
+rm -rf ~/TorBrowser-Data
+
+## turn on ssh-agent
 eval `ssh-agent -s`
 
-conky &
+## DBus
+if [ -x /usr/local/bin/dbus-launch -a -z "${DBUS_SESSION_BUS_ADDRESS}" ]; then
+	eval `dbus-launch --sh-syntax --exit-with-x11`
+fi
 
+## Termbar
+xterm -geometry 320x1+0+0 -fa "mono:size=14" -bg "black" \
+	-fg grey -fs 11 -name termbar -class termbar \
+	-T termbar -e ~/code/termbar &
+
+## Wallpaper
 feh --bg-tile ~/themes/tiling-nice3.png &
-#feh --bg-scale ~/themes/OpenBSD-Carbon-Fiber.png &
 
 exec cwm
