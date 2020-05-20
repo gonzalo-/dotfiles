@@ -3,6 +3,10 @@
 ## set keyboard map
 setxkbmap jp
 
+## I need äüöß
+# right alt + a + " == ä
+setxkbmap -option compose:ralt
+
 ## utf-8 love
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
