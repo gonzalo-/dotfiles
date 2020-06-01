@@ -1,27 +1,25 @@
 #!/bin/sh
 
-## colours
-ora='\e[0;35m'
+yel='\033[33m'
+pur='\033[35m'
+gre='\033[32m'
 rst='\033[0m'
 
+pipe="${pur}|${rst}"
+
 while true; do
-	## cpu
 	CPU_SPEED=$(sysctl hw.cpuspeed | cut -d "=" -f 2 | cut -d "." -f 1)
 	CPU_TEMP=$(sysctl hw.sensors.cpu0.temp0 | cut -d "=" -f 2 | cut -d "." -f 1)
-	## ram
 	RAM=$(top | grep Memory | awk {'print $6'})
-	## battery
 	BAT_STATUS=$(sysctl hw.sensors.acpiac0.indicator0 | cut -d "=" -f 2 | cut -d "." -f 1)
 	BAT=$(apm -l)
-	## day
 	DATE=$(date +"%B %d - %H:%M")
-	## wireless
 	SSID=$(ifconfig | grep ieee | awk -F'"' '$0=$2')
-	## public ip
+#	SSID=$(ifconfig | grep ieee | awk '/join/ {print $3}')
+	INTIP=$(ifconfig trunk0 | grep inet | awk '{print $2}')
 	IP=$(dig +short myip.opendns.com @resolver1.opendns.com | awk {'printf $1'})
-	## printf all the things
-	printf "  $DATE ${ora}|${rst} CPU: $CPU_SPEED ($CPU_TEMP°) ${ora}|${rst} Free Ram: $RAM "
-	printf "${ora}|${rst} Bat: $BAT - $BAT_STATUS ${ora}|${rst} SSID: $SSID ${ora}|${rst}"
-	printf " Public IP: $IP \r"
-	sleep 1
+	printf "  $DATE ${pipe} ${gre}CPU:${rst} $CPU_SPEED ($CPU_TEMP°) ${pipe} ${gre}Free Ram:${rst} $RAM "
+	printf "${pipe} ${gre}Bat:${rst} $BAT - $BAT_STATUS ${pipe} ${gre}SSID:${rst} $SSID ${pipe}"
+	printf " ${gre}Pub. IP:${rst} $IP - ${gre}Int. IP:${rst} $INTIP \r"
+	sleep 15
 done
