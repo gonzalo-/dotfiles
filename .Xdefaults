@@ -1,38 +1,40 @@
-!!! Xterm 
-XTerm*color0: rgb:2a/3b/4d
-XTerm*color1: rgb:c4/67/6c
-XTerm*color2: rgb:66/ff/66
-XTerm*color3: rgb:ff/ff/66
-XTerm*color4: rgb:15/f4/ee
-XTerm*color5: rgb:9c/6c/d3
-XTerm*color6: rgb:4b/8f/77
-XTerm*color7: rgb:9f/a2/a6
-XTerm*color8: rgb:55/79/9c
-XTerm*color9: rgb:c4/67/6c
-XTerm*color10: rgb:66/ff/66
-XTerm*color11: rgb:ff/ff/66
-XTerm*color12: rgb:15/f4/ee
-XTerm*color13: rgb:9c/6c/d3
-XTerm*color14: rgb:4b/8f/77
-XTerm*color15: rgb:ff/ff/ff
-XTerm*color16: rgb:ff/99/66 # Base 09
-XTerm*color17: rgb:bb/64/a9 # Base 0F
-XTerm*color18: rgb:3d/56/6f # Base 01
-XTerm*color19: rgb:4b/69/88 # Base 02
-XTerm*color20: rgb:7e/90/a3 # Base 04
-XTerm*color21: rgb:d6/d7/d9 # Base 06
+!!! Colours
+*color0: rgb:2a/3b/4d
+*color1: rgb:c4/67/6c
+*color2: rgb:66/ff/66
+*color3: rgb:ff/ff/66
+*color4: rgb:15/f4/ee
+*color5: rgb:9c/6c/d3
+*color6: rgb:4b/8f/77
+*color7: rgb:9f/a2/a6
+*color8: rgb:55/79/9c
+*color9: rgb:c4/67/6c
+*color10: rgb:66/ff/66
+*color11: rgb:ff/ff/66
+*color12: rgb:15/f4/ee
+*color13: rgb:9c/6c/d3
+*color14: rgb:4b/8f/77
+*color15: rgb:ff/ff/ff
+*color16: rgb:ff/99/66
+*color17: rgb:bb/64/a9
+*color18: rgb:3d/56/6f
+*color19: rgb:4b/69/88
+*color20: rgb:7e/90/a3
+*color21: rgb:d6/d7/d9
 
+!!! Xterm
 XTerm*background: black
 XTerm*foreground: rgb:9f/a2/a6
 XTerm*eightBitInput: false
 XTerm*loginShell: true
 XTerm*scrollBar: false
-XTerm*saveLines: 1500
-XTerm*faceName:	xft:monospace:pixelsize=16
+XTerm*saveLines: 2000
+XTerm*faceName: xft:monospace:pixelsize=16
 XTerm*internalBorder: 10
 XTerm*locale: true
 XTerm*pointerMode: 2
 XTerm*allowTitleOps: true
+XTerm*termName: xterm-256color
 
 !!! xLock
 XLock.nice: 19
