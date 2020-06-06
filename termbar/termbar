@@ -17,8 +17,8 @@ today()
 
 cpu()
 {
-	CPU_SPEED=$(sysctl hw.cpuspeed | cut -d "=" -f 2 | cut -d "." -f 1)
 	CPU_TEMP=$(sysctl hw.sensors.cpu0.temp0 | cut -d "=" -f 2 | cut -d "." -f 1)
+	CPU_SPEED=$(printf "%4s" $(sysctl hw.cpuspeed | cut -d "=" -f 2 | cut -d "." -f 1))
 }
 
 bat()
