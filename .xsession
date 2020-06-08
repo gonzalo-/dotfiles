@@ -48,7 +48,7 @@ fi
 
 ## Termbar
 exec xterm -geometry 1920x1+0+0 -fa "mono:size=14" -fs 12 \
-	-bg "black" -name termbar -class termbar \
+	-bg "black" -fg "grey" -name termbar -class termbar \
 	-T termbar -e ~/code/termbar &
 
 ## Wallpaper

@@ -63,6 +63,6 @@ while true; do
 	network
 	printf "  ${DATE} ${pipe} ${cyanf}CPU:${reset} ${CPU_SPEED} MHz (${CPU_TEMP}°) ${pipe} ${cyanf}Mem:${reset} ${MEM} "
 	printf "${pipe} ${cyanf}Bat:${reset} $BAT - ${BAT_STATUS} ${pipe} ${cyanf}SSID:${reset}${SSID}${pipe}"
-	printf " ${cyanf}IPs:${reset} ${PIP} / ${IIP} \v"
+	printf " ${cyanf}IPs:${reset} ${PIP} / ${IIP} \r"
         sleep 15
 done
