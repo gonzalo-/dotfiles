@@ -11,6 +11,7 @@ export LESS='-iMRS -x2'
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export CLICOLOR=1
+export PKG_ADD="/usr/sbin/pkg_add -Dsnap"
 
 # emacs mode gives you the familiar Ctrl-A, Ctrl-E, etc
 set -o emacs
@@ -22,6 +23,7 @@ else
 	LS='ls'
 fi
 
+## Aliases
 alias ls="$LS -FHh"
 alias ll='ls -l'
 alias la='ls -lA'
@@ -36,3 +38,5 @@ alias updatedb='/usr/libexec/locate.updatedb'
 alias pastebin="curl -F 'pastebitch=<-' http://pastebitch.com"
 alias ip='curl https://ip.x61.sh && printf "\n"'
 alias tiempo='curl http://wttr.in/Buenos_Aires && printf "\n"'
+alias aria2c='aria2c -c -m 0 '
+

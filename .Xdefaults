@@ -36,6 +36,21 @@ XTerm*pointerMode: 2
 XTerm*allowTitleOps: true
 XTerm*termName: xterm-256color
 
+!!! termbar
+termbar*faceName: "-*-fixed-medium-*-*-*-18-*-*-*-*-*-iso8859-*"
+!!!termbar*geometry: 1920x1+0+0
+termbar*geometry: 3840x1+0+0
+termbar*internalBorder: 6
+termbar*saveLines: 0
+termbar*locale: true
+termbar*scrollBar: false
+termbar*title: termbar
+
+!!! Xconsole
+XConsole*internalBorder: 5
+XConsole*scrollBar: false
+XConsole*faceName: xft:monospace:pixelsize=10
+
 !!! xLock
 XLock.nice: 19
 XLock.mode: blank
@@ -59,14 +74,14 @@ ssh-askpass.indicator.background: #a0a0a0
 ssh-askpass.indicator.foreground: #a290b5
 
 !!! make alt+v/command+v paste clipboard
-*.XTerm.*.VT100.translations:	#override\
-    Meta <KeyPress> V: insert-selection(CLIPBOARD, PRIMARY, CUT_BUFFER0)\n\
-    Super <KeyPress> V: insert-selection(CLIPBOARD, PRIMARY, CUT_BUFFER0)
+*.XTerm.*.VT100.translations:		#override\
+	Meta <KeyPress> V: insert-selection(CLIPBOARD, PRIMARY, CUT_BUFFER0)\n\
+	Super <KeyPress> V: insert-selection(CLIPBOARD, PRIMARY, CUT_BUFFER0)
 
 !!! make xaw scrollbars act like normal ones
-.XTerm.*.Scrollbar.translations:                             #override\
-    <Btn1Down>: StartScroll(Continuous) MoveThumb() NotifyThumb() \n\
-    <Btn2Down>: StartScroll(Forward) \n\
-    <Btn3Down>: StartScroll(Backward) \n\
-    <Btn1Motion>: MoveThumb() NotifyThumb() \n\
-    <BtnUp>: NotifyScroll(Proportional) EndScroll()
+.XTerm.*.Scrollbar.translations:	#override\
+	<Btn1Down>: StartScroll(Continuous) MoveThumb() NotifyThumb() \n\
+	<Btn2Down>: StartScroll(Forward) \n\
+	<Btn3Down>: StartScroll(Backward) \n\
+	<Btn1Motion>: MoveThumb() NotifyThumb() \n\
+	<BtnUp>: NotifyScroll(Proportional) EndScroll()
