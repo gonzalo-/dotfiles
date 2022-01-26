@@ -1,10 +1,6 @@
 # dotfiles
 Daily dotfiles
 
-Conky
+For screenshot you can check on:
 
-![Alt Text](https://github.com/gonzalo-/dotfiles/raw/master/conky/conky.png)
-
-CWM
-
-![Alt Text](https://github.com/gonzalo-/dotfiles/raw/master/cwm/cwm.png)
+https://deskto.ps/u/gonzalo
